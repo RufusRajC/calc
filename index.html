@@ -1,190 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Car Protection Quote</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-    }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 900px;
-      margin: auto;
-    }
-    .form-container,
-    .output-container {
-      width: 48%;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    h2, h3 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    label {
-      font-weight: bold;
-      margin-top: 10px;
-      display: block;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #28a745;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      width: 100%;
-      border-radius: 5px;
-      margin-top: 15px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background-color: #218838;
-    }
-    .output-container {
-      text-align: left;
-      display: none;
-    }
-    .output-container p {
-      background: #f1f1f1;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: auto;
+        }
+        .form-container, .output-container {
+            width: 48%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .output-container {
+            text-align: left;
+            display: none;
+        }
+        .output-container h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .output-container p {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- FORM SECTION -->
-    <div class="form-container">
-      <h2>Car Protection Quote Form</h2>
-      <form id="carDetailForm">
-        <label for="fullName">Full Name:</label>
-        <input type="text" name="fullName" id="fullName" required />
-
-        <label for="email">Email Address:</label>
-        <input type="email" name="email" id="email" required />
-
-        <label for="phone">WhatsApp Number/Phone Number:</label>
-        <input type="tel" name="phone" id="phone" required />
-
-        <label for="carModel">Car Make & Model:</label>
-        <input type="text" name="carModel" id="carModel" placeholder="Ex: Hyundai Verna" required />
-
-        <label for="yearOfManufacturing">Year of Manufacturing:</label>
-        <input type="number" name="yearOfManufacturing" id="yearOfManufacturing" placeholder="Ex: 2021" required />
-
-        <label for="carSize">Car Size:</label>
-        <select name="carSize" id="carSize" required>
-          <option value="Hatchback">Hatchback</option>
-          <option value="Sedan">Sedan</option>
-          <option value="MUV">MUV</option>
-          <option value="SUV">SUV</option>
-          <option value="Luxury Car">Luxury Car</option>
-          <option value="Sports">Sports</option>
-        </select>
-
-        <label for="protectionType">Protection Type:</label>
-        <select name="protectionType" id="protectionType" required>
-          <option value="Ceramic">Ceramic</option>
-          <option value="Graphene">Graphene</option>
-          <option value="Wrap">Wrap</option>
-          <option value="PPF">PPF</option>
-          <option value="Partial PPF">Partial PPF</option>
-        </select>
-
-        <label for="carCondition">Car Condition:</label>
-        <select name="carCondition" id="carCondition" required>
-          <option value="Brand New">Brand New (No Scratches & Dullness)</option>
-          <option value="Good">Good Condition (Swirl Marks & Little Dullness)</option>
-          <option value="Fair">Fair Condition (Minor Scratches with Swirls and Dullness)</option>
-          <option value="Poor">Poor Condition (Extremely Scratched & Car Looks Dull)</option>
-        </select>
-
-        <label for="warranty">Warranty (Years):</label>
-        <input type="number" name="warranty" id="warranty" required />
-
-        <label for="offerPrice">Offer Price:</label>
-        <input type="number" name="offerPrice" id="offerPrice" required />
-
-        <label for="estimatedSavings">Estimated Savings:</label>
-        <input type="number" name="estimatedSavings" id="estimatedSavings" required />
-
-        <button type="submit">Submit</button>
-      </form>
+    <div class="container">
+        <!-- FORM SECTION -->
+        <div class="form-container">
+            <h2>Car Protection Quote Form</h2>
+            <form id="carDetailForm">
+                <label>Full Name:</label>
+                <input type="text" name="fullName" required>
+    
+                <label>Email Address:</label>
+                <input type="email" name="email" required>
+    
+                <label>WhatsApp Number/Phone Number:</label>
+                <input type="tel" name="phone" required>
+    
+                <label>Car Make & Model:</label>
+                <input type="text" name="carModel" placeholder="Ex: Hyundai Verna" required>
+    
+                <label>Year of Manufacturing:</label>
+                <input type="number" name="yearOfManufacturing" placeholder="Ex: 2021" required>
+    
+                <label>Car Size:</label>
+                <select name="carSize" required>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="MUV">MUV</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Luxury Car">Luxury Car</option>
+                    <option value="Sports">Sports</option>
+                </select>
+    
+                <label>Protection Type:</label>
+                <select name="protectionType" required>
+                    <option value="Ceramic">Ceramic</option>
+                    <option value="Graphene">Graphene</option>
+                    <option value="Wrap">Wrap</option>
+                    <option value="PPF">PPF</option>
+                    <option value="Partial PPF">Partial PPF</option>
+                </select>
+    
+                <label>Car Condition:</label>
+                <select name="carCondition" required>
+                    <option value="Brand New">Brand New (No Scratches & Dullness)</option>
+                    <option value="Good">Good Condition (Swirl Marks & Little Dullness)</option>
+                    <option value="Fair">Fair Condition (Minor Scratches with Swirls and Dullness)</option>
+                    <option value="Poor">Poor Condition (Extremely Scratched & Car Looks Dull)</option>
+                </select>
+    
+                <label>Warranty (Years):</label>
+                <input type="number" name="warranty" required>
+    
+                <label>Offer Price:</label>
+                <input type="number" name="offerPrice" required>
+    
+                <label>Estimated Savings:</label>
+                <input type="number" name="estimatedSavings" required>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    
+        <!-- OUTPUT SECTION -->
+        <div class="output-container" id="outputContainer">
+            <h3>Submitted Data</h3>
+            <p><strong>Full Name:</strong> <span id="outputFullName"></span></p>
+            <p><strong>Email Address:</strong> <span id="outputEmail"></span></p>
+            <p><strong>WhatsApp Number:</strong> <span id="outputPhone"></span></p>
+            <p><strong>Car Make & Model:</strong> <span id="outputCarModel"></span></p>
+            <p><strong>Year of Manufacturing:</strong> <span id="outputYear"></span></p>
+            <p><strong>Car Size:</strong> <span id="outputCarSize"></span></p>
+            <p><strong>Protection Type:</strong> <span id="outputProtectionType"></span></p>
+            <p><strong>Car Condition:</strong> <span id="outputCarCondition"></span></p>
+            <p><strong>Warranty (Years):</strong> <span id="outputWarranty"></span></p>
+            <p><strong>Offer Price:</strong> <span id="outputOfferPrice"></span></p>
+            <p><strong>Estimated Savings:</strong> <span id="outputSavings"></span></p>
+        </div>
     </div>
-
-    <!-- OUTPUT SECTION -->
-    <div class="output-container" id="outputContainer">
-      <h3>Submitted Data</h3>
-      <p><strong>Full Name:</strong> <span id="outputFullName"></span></p>
-      <p><strong>Email Address:</strong> <span id="outputEmail"></span></p>
-      <p><strong>WhatsApp Number:</strong> <span id="outputPhone"></span></p>
-      <p><strong>Car Make & Model:</strong> <span id="outputCarModel"></span></p>
-      <p><strong>Year of Manufacturing:</strong> <span id="outputYear"></span></p>
-      <p><strong>Car Size:</strong> <span id="outputCarSize"></span></p>
-      <p><strong>Protection Type:</strong> <span id="outputProtectionType"></span></p>
-      <p><strong>Car Condition:</strong> <span id="outputCarCondition"></span></p>
-      <p><strong>Warranty (Years):</strong> <span id="outputWarranty"></span></p>
-      <p><strong>Offer Price:</strong> <span id="outputOfferPrice"></span></p>
-      <p><strong>Estimated Savings:</strong> <span id="outputSavings"></span></p>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("carDetailForm").addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        const form = this;
-        const formData = new FormData(form);
-
-        try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbxzf2IN67P6CrbGiZdue99g5Rh-RiZkPkUwzCH7FjpU8xeTFSrprBhAHJnQwATxpPDl/exec", {
-                method: "POST",
-                body: formData
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                // Update the UI
-                document.getElementById("outputFullName").innerText = form.fullName.value;
-                document.getElementById("outputEmail").innerText = form.email.value;
-                document.getElementById("outputPhone").innerText = form.phone.value;
-                document.getElementById("outputCarModel").innerText = form.carModel.value;
-                document.getElementById("outputYear").innerText = form.yearOfManufacturing.value;
-                document.getElementById("outputCarSize").innerText = form.carSize.value;
-                document.getElementById("outputProtectionType").innerText = form.protectionType.value;
-                document.getElementById("outputCarCondition").innerText = form.carCondition.value;
-                document.getElementById("outputWarranty").innerText = form.warranty.value;
-                document.getElementById("outputOfferPrice").innerText = form.offerPrice.value;
-                document.getElementById("outputSavings").innerText = form.estimatedSavings.value;
-
-                document.getElementById("outputContainer").style.display = "block";
-                alert("✅ Submitted successfully!");
-            } else {
-                alert("❌ Submission failed. Please try again.");
-            }
-        } catch (error) {
-            console.error("Submission error:", error);
-            alert("❌ Submission failed. Check console.");
-        }
-    });
-</script>
-
+    <script>
+        document.getElementById("carDetailForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+        
+            let formData = [
+                this.fullName.value,
+                this.email.value,
+                this.phone.value,
+                this.carModel.value,
+                this.yearOfManufacturing.value,
+                this.carSize.value,
+                this.protectionType.value,
+                this.carCondition.value,
+                this.warranty.value,
+                this.offerPrice.value,
+                this.estimatedSavings.value
+            ];
+        
+                const response = await fetch("hhttps://script.google.com/macros/s/AKfycbwxOsAC_sgMsOe6BDGVScsrxNK1AsCO0qrWm_4GkkICMbh_zY5LBpEoOrPrm0FSU20Hig/exec", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ values: [formData] }) // Wrap data correctly
+                });
+        
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById("outputFullName").innerText = this.fullName.value;
+                    document.getElementById("outputEmail").innerText = this.email.value;
+                    document.getElementById("outputPhone").innerText = this.phone.value;
+                    document.getElementById("outputCarModel").innerText = this.carModel.value;
+                    document.getElementById("outputYear").innerText = this.yearOfManufacturing.value;
+                    document.getElementById("outputCarSize").innerText = this.carSize.value;
+                    document.getElementById("outputProtectionType").innerText = this.protectionType.value;
+                    document.getElementById("outputCarCondition").innerText = this.carCondition.value;
+                    document.getElementById("outputWarranty").innerText = this.warranty.value;
+                    document.getElementById("outputOfferPrice").innerText = this.offerPrice.value;
+                    document.getElementById("outputSavings").innerText = this.estimatedSavings.value;
+                
+                    document.getElementById("outputContainer").style.display = "block";
+                }
+        
+                alert("✅ Success! " + data);
+        });
+        </script>
 </body>
 </html>
